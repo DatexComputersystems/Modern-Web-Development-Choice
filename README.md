@@ -170,7 +170,6 @@ In favor of consistency, &#39;Node.js&#39; is treated as a server-side language,
 |  |  |
 | --- | --- |
 | Component Object Model | COM |
-| --- | --- |
 | Document Object Model | DOM |
 | Dynamic Link Library | DLL |
 | Generic Java | GJ |
