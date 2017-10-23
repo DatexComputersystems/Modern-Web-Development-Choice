@@ -167,6 +167,8 @@ In favor of consistency, &#39;Node.js&#39; is treated as a server-side language,
 
 # Table of abbreviations <a name="tableofabbreviations"></a>
 
+|  |  |
+| --- | --- |
 | Component Object Model | COM |
 | --- | --- |
 | Document Object Model | DOM |
