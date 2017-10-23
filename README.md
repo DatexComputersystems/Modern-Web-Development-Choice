@@ -431,16 +431,16 @@ The expected longevity of the frameworks can be seen when looking at releases, m
 
 Regarding performance, the new Glimmer and the fiber implementation are both doubtlessly fast enough for Amadeus. Nevertheless, React has significant performance advantages in comparison to Ember. Running a framework benchmark test (Krause et al., 2015) shows significant differences between the two technologies. The values are in milliseconds. The test ran on a 64bit Windows (Version 1703, Build 15063.483) virtual machine with an Intel i7-2600 CPU (3.40GHz, 3GB RAM) and Chrome v.60.0.3112.90. The results are in milliseconds.
 
+<a name="firstfigure"></a>
 ![Statistic of 10.000 row creation. It takes Ember 8519.045 ms and React 4771.61 ms ](./pictures/Create10000rows.png?raw=true "Inserting 10.000 rows")
 
-<a name="firstfigure"></a>
 **1. Figure – Performance: create 10.000 rows** 
 
 The first figure shows the performance perks of the Fiber implementation when creating new DOM elements. React is almost 1.8 times faster than its counterpart. Other benchmark tests demonstrate that the new Glimmer virtual machine can almost keep up with the virtual DOM of React. The following figure shows the time spent to update rows.
 
+<a name="secondfigure"></a>
 ![Statistic of updating every 10th row. It takes Ember 1936.595 ms and React 953.955 ms ](./pictures/UpdateEvery10throw.png?raw=true "Updating every 10th row")
 
-<a name="secondfigure"></a>
 **2. Figure – Performance: update every 10th row** 
 
 <a name="frontendpackagesize"></a>
@@ -552,23 +552,24 @@ To follow up on the fact, that customers have been using a desktop application f
 
 To overcome some anticipated migration problems, developers started working on a centralized server called Starserver a year ago. The Starserver is entirely written in C# and is meant to solve some VB6 issues by allowing mutual communication from and to Amadeus. The interface works through a TCP/Remote Method Invocation (RMI) &#9998; library (Kalkan &amp; Cleaver, 2013) and a COM wrapper. At the time of writing, the development of the Starserver is finished and developers are starting to not only migrate C# DLLs, but also to add new features, to the Starserver.
 
+<a name="thirdfigure"></a>
+
 ![Amadeus is connected to 40 'raw' DLL's which will be migrated to the Starserver. At the same time, web development of the futuristic Amadeus starts.](./pictures/AmadeusNow.png?raw=true "Rewrite of Amadeus and Starserver migration")
 
-<a name="thirdfigure"></a>
 **3. Figure – Migration phase #1: Rewrite of Amadeus &amp; Starserver migration** 
 
 At the same time, as seen in the third figure, developers can start the reimplementation of Amadeus with the proposed technologies from this paper. The already written Craftmanportal must be migrated from Scala to Node.js and every Amadeus user story that is implemented in the legacy code base, must be resembled in the futuristic Amadeus. Furthermore, the Starserver is connected to the database whereas single C# DLLs had no database access and were fully reliant on information passed by the VB6 code through COM interoperability. Every service that gets migrated to the Starserver can access the database. As a result, less COM dependent communication is required, removing code complexity and DLL hell in the process.
 
+<a name="forthfigure"></a>
 ![The legacy code base is connected to a single instance of the Starserver via Socket, RMI and COM. Both the legacy code and the Starserver have access to the database.](./pictures/AmadeusLater.png?raw=true "Rewrite of Amadeus and adding features")
 
-<a name="forthfigure"></a>
 **4. Figure – Migration phase #2: Rewrite of Amadeus &amp; adding features** 
 
 Figure 4 depicts the infrastructure once the Starserver migration is finished. Only one DLL will be required, ultimately getting rid of a lot of code verbosity. During this migration phase, all the developers can solely focus on adding more features to Amadeus (Starserver) and the futuristic – progressive web application – Amadeus.
 
+<a name="fifthfigure"></a>
 ![We have one web application (Ember) and a desktop application (Ember + Electron). Either the clients are connected to both, Starserver and Node.js server, or to only Node.js.](./pictures/AmadeusWeb.png?raw=true "Progressive, ambitious web application")
 
-<a name="fifthfigure"></a>
 **5. Figure – Migration phase #3: Progressive, ambitious web application**
 
 At the time, the web application is going to contain the same functionality as the VB6 legacy code, we can get rid of VB6 entirely and additionally make use of all the features that were implemented into the Starserver during the entire migration process. There are different ways to make use of the code inside of the Starserver.
