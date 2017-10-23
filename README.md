@@ -106,6 +106,7 @@ Scientific work of some decisions that need to be taken into account when rewrit
 [References](#references)
 
 <a name="listofillustrations"></a>
+
 # List of illustrations
 
 [1. Figure – Performance: create 10.000 rows](#firstfigure)
@@ -118,7 +119,9 @@ Scientific work of some decisions that need to be taken into account when rewrit
 
 [5. Figure – Migration phase #3: Progressive, ambitious web application](#fifthfigure)
 
-# List of tables <a name="listoftables"></a>
+<a name="listoftables"></a>
+
+# List of tables
 
 [1. Table – Front end: Selection criteria with description](#firsttable)
 
@@ -132,7 +135,8 @@ Scientific work of some decisions that need to be taken into account when rewrit
 
 [6. Table – Back end: Decision matrix](#sixthtable)
 
-# List of attachments <a name="listofattachments"></a>
+<a name="listofattachments"></a>
+# List of attachments 
 
 [1. Attachment – Market share operating systems](#firstattachments)
 
@@ -142,7 +146,8 @@ Scientific work of some decisions that need to be taken into account when rewrit
 
 [4. Attachment – Latency comparison](#forthattachment)
 
-# Typographical conventions <a name="typographicalconventions"></a>
+<a name="typographicalconventions"></a>
+# Typographical conventions 
 
 Following typographical conventions are used throughout the study.
 
@@ -166,7 +171,8 @@ A CD with an electronic version of this project thesis, and the source code that
 
 In favor of consistency, &#39;Node.js&#39; is treated as a server-side language, while technically being a server-side technology. Further, the terms future- or futuristic Amadeus always refer to the new implementation of Amadeus and are used interchangeably.
 
-# Table of abbreviations <a name="tableofabbreviations"></a>
+<a name="tableofabbreviations"></a>
+# Table of abbreviations 
 
 |  |  |
 | --- | --- |
@@ -187,9 +193,11 @@ In favor of consistency, &#39;Node.js&#39; is treated as a server-side language,
 | Visual Basic 6 | VB6 |
 | XMLHttpRequest | XHR |
 
-# 1. Introduction <a name="introduction"></a>
+<a name="introduction"></a>
+# 1. Introduction 
 
-## 1.1 Problem definition <a name="problemdefinition"></a>
+<a name="problemdefinition"></a>
+## 1.1 Problem definition 
 
 Datex Computersysteme GmbH develops real estate software since nearly three decades. The primary product – Amadeus, which is a commercial industry-specific software for real estate developer – has been around for almost as long and enriched the productivity and workflow of thousands of customers to this day. As of now, Amadeus is almost entirely written in Visual Basic 6 (VB6) &#9998;. Unfortunately, the support for Visual Basic Classic &#9998;, the integrated development environment (IDE) and many libraries ended a long time ago. (Yuknewicz, Latham, Onderka, &amp; Petrusha, 2016) This means that the current development process is tedious, slow and error-prone as modern quality management tools can&#39;t be used with ease. Finally, Datex decided to rewrite Amadeus with modern languages from scratch.
 
@@ -199,7 +207,8 @@ Considering that not only the language but also the codebase, database and under
 
 Since the current version of Amadeus must be maintained while we work on the rewrite, establishing a resource-saving migration path that allows improvements of the current software without losing the resources spend to do so, is essential.
 
-## 1.2 Structure <a name="structure"></a>
+<a name="structure"></a>
+## 1.2 Structure 
 
 Present paper will evaluate existing and new bleeding edge technologies &#9998; in various aspects, compare them and consequential articulate recommendations about what technologies suit Amadeus in the best viable way, based on scientific evidence.
 
@@ -211,11 +220,13 @@ The central part of the present scientific work is the evaluation and comparison
 
 Finally, several action recommendations from previous chapters should enable Datex with new possibilities to write sophisticated software and the application area of the new development stack will be concluded. Additionally, a migration path will be proposed and a broad prospect of future development evaluates the longevity of the proposed technologies.
 
-## 1.3 Target audience <a name="targetaudience"></a>
+<a name="targetaudience"></a>
+## 1.3 Target audience 
 
 The scientific work is targeted towards any developer that must assess different technologies and will showcase scientific methods that help to make decisions based on empirical evidence. As an aside, the results will be Amadeus specific and undoubtedly differ from case to case, whereas the evaluation process and decision-making method will be similar for everyone.
 
-## 1.4 Objective <a name="objective"></a>
+<a name="objective"></a>
+## 1.4 Objective 
 
 Since most online resources that compare different languages, tools or framework are non-scientific and statistics do not always represent the reality, the following paper tries to provide impartial methods to evaluate and compare similar, competing technologies to each other. Consequently, the main goal of the project thesis is to assess different technologies from different angles and compare them in a non-biased way to conclude which language, tool or framework suits the rewrite of Amadeus in the best feasible way to not only enhance quality standards and embrace best practices, but also to increase productivity amongst the developers. The center of the project thesis is to establish a well-maintained development stack that enables the usage of modern development tools and most importantly, rewrite Amadeus in a cost-efficient manner. At the same time, maintaining the current version of Amadeus midst the development of the futuristic Amadeus is also of high priority.
 
@@ -223,19 +234,23 @@ The paper is also meant to give developers a broad overview of some of the techn
 
 Rewriting Amadeus is not part of the scientific work, as it would go beyond the scope of this thesis.
 
-# 2. Fundamentals <a name="fundamentals"></a>
+<a name="fundamentals"></a>
+# 2. Fundamentals 
 
-## 2.1 Reimplementation <a name="reimplemntation"></a>
+<a name="reimplemntation"></a>
+## 2.1 Reimplementation 
 
 The reimplementation paradigm can be realized by first analyzing the system using a method called architecture reconstruction &#9998;. After a certain task or user story within the system has been identified and detached from the specific programming language (Pugh, 2005, p. 160), one can start reimplementing the problem in any target language based on the understanding of the problem. (Waters, 1988) Detachment from the current architecture and language is not only important to prevent the disadvantageous copy pasting of tasks (Maurer &amp; Kulathuramaiyer, 2007) into a newer system but also to reason through the first-principle school of thought (Yourgrau &amp; Beginnen, 2005, 197f), which enables developers to think about certain problems anew, ultimately improving the solution in the process. If this process is repeated for each subproblem within a software system, the program can be considered reimplemented.
 
-## 2.2 Amadeus <a name="amadeus"></a>
+<a name="amadeus"></a>
+## 2.2 Amadeus 
 
 Amadeus is a commercial software for real estate owner, project leader and other businessperson in the real estate development market. Initially released in 1991, it went through a lot of changes in its early days.
 
 In 1993 developers of Datex decided to rewrite Amadeus in Visual Basic 3, leaving the programming language &#39;Clipper&#39; as well as its respective database &#39;dBase&#39; behind. Ever since the change, Amadeus uses Microsoft&#39;s access database as well as the newest version of Visual Basic Classic, whose support ended shortly after the sixth version with the introduction to the .NET framework. Microsoft stated repeatedly that they won&#39;t open source nor bring back the old Visual Basic. (Yuknewicz, 2014) Over the years, Datex used interoperability of the Component Object Model (COM) &#9998; to make use of some .NET features while still having most of the code-base written in an obsolete language. The languages restrict Amadeus on both the server-, as well as the client side, to only run on an underlying Windows operating system. Amadeus enables real estate developers to be more productive and to have an easier time maintaining projects, to publish them to a variety of different real estate portals and to handle financial accounting. As Amadeus matures, it has changed a lot; the current version (IX) has been in development for nearly 13 years and brought a variety of changes to functionality, the graphical user interface (GUI) and most importantly code quality. After the release of the latest version, Amadeus supports two databases. Access and PostgreSQL both need to be maintained in the future.
 
-## 2.3 Functional Programming <a name="functionalprogramming"></a>
+<a name="functionalprogramming"></a>
+## 2.3 Functional Programming 
 
 Functional Programming is a programming paradigm that is based on the premise to create projects from solely pure functions. (Chiusano &amp; Bjarnason, 2015, 3f) Pure functions do not have any side effects due to referential transparency, which makes pure functions predictive, and consists out of several properties such as extensionality, definiteness, and unfoldability. (Ram; Sndergaard &amp; Sestoft, 1990, 505f) Since pure functions always have a precisely defined purpose, they are easier to understand and reason about. (Chiusano &amp; Bjarnason, 2015, p. 9) The result of having no side effects is that those functions are easier to maintain in terms of debugging and testing.
 
@@ -245,33 +260,40 @@ Functional programming influenced many other languages throughout its long histo
 
 Functional languages that don&#39;t produce side-effects at all are called purely functional programming languages, while others that contain or allow code with side effects are called impure languages. (SABRY, 1998, p. 1)
 
-## 2.4 Scala <a name="scala"></a>
+<a name="scala"></a>
+## 2.4 Scala 
 
 Scala is an impure functional, object-oriented, imperative programming language. German scientist Martin Odersky initially took some functional programming aspects in conjunction with Java and created the Pizza programming language, followed by Generic Java (GJ). Even though the languages supported higher order functions, pattern matching, and generics, he wanted to take it a step further and rewrote Java almost entirely, except for the underlying Java Virtual Machine (JVM) &#9998; architecture. Scala was the result of GJ and &#39;Funnel&#39;, an academic prototype of Scala, released in 2003 (Venners &amp; Sommers, 2009) and stands for &#39;scalable language&#39;. It works with all Java libraries, thus enabling developers to access a huge ecosystem of frameworks, tools, and libraries. (Odersky et al., 2010, p. 3)
 
 Neal Gafter describes Scala in his foreword to &#39;Programming in Scala&#39; as &quot;tastefully typed language&quot; (Odersky et al., 2010, xxxix) because it is statically typed &#9998;, but can be explicitly typed &#9998; in places necessary. This somewhat flexible behavior can be seen throughout the whole language specification (Odersky, 2014, p. 183) and always tries to combine the best of both, functional and object-oriented, worlds. Both, pure and impure functions are supported, but it is generally advised to stick to pure functions. (Chiusano &amp; Bjarnason, 2015, xiii)
 
-## 2.5 Node.js <a name="nodejs"></a>
+<a name="nodejs"></a>
+## 2.5 Node.js 
 
 JavaScript is a highly flexible language that was originally known for running in the browser. When Google open sourced their JavaScript engine – V8 – in 2008, the essentials to a rich ecosystem were set, and it didn&#39;t take long until the community made use of it. (McCune, 2011, 1f) At the end of 2009, the 5th edition of the ECMAScript &#9998; standard was released by the TC39 consortium &#9998;, resulting in even more JavaScript publicity and developers working on it. At the same time, Ryan Dahl saw the flexibility and event loop &#9998; of JavaScript as a huge advantage and started working on Node.js to overcome some problems of other languages. When he released Node.js, JavaScript could be written on the server. (Springer, 2013, 21f) Node.js was built with the premise to fix blocking input/output (I/O) and that &quot;threaded concurrency is a leaky abstraction&quot; (Dahl, 2009, 7:00–8:00). Thus, it is built on V8 and uses the event loop to allow asynchronous non-blocking I/O, running in a single thread. (Jensen, 2017, p. 92) Node.js also makes use of many C and C++ libraries to allow functionality through modules like streaming, sockets and I/O. An ever-growing open source community and the addition of a package manager that allows easy package distribution (Debill; Välimäki, 2005, p. 17) in 2010 (Schlueter, 2010), lead to even more popularity and Node.js being adopted by large companies. Node.js provides the fundamentals and underlying, platform independent architecture for many great technologies. (Cravens &amp; Brady, 2014, p. 9) Under those circumstances, Electron.js &#9998; use Node.js to concede the possibility of creating cross-platform desktop applications using JavaScript. (Jensen, 2017, p. 115)
 
-## 2.6 Modern web development <a name="modernwebdevelopment"></a>
+<a name="modernwebdevelopment"></a>
+## 2.6 Modern web development 
 
 Web development has changed a lot over the past couple of years. To verbally describe new possibilities, new vocabulary was mandatory. The obsolete term web page indicates static, non-dynamic content; Whereas, modern technologies allow developers to create feature-rich, highly interactive, dynamic and fast web applications. Following chapters explain the vocabulary that will be used throughout the book.
 
-### 2.6.1 Single Page Application <a name="singlepageapplication"></a>
+<a name="singlepageapplication"></a>
+### 2.6.1 Single Page Application 
 
 The developer community had developed web pages that refreshed with every user action for years, before XMLHttpRequest (XHR) was introduced. The possibility of &quot;inner-browsing&quot; lead to the opportunity to have fully functional web applications within a single page. (Galli &amp; Perrier, 2003; van Kesteren, 2017) Advancing technologies provide functionality such as Document Object Model (DOM) &#9998; manipulation, routing and XHR to build Single Page Applications (SPA).
 
-### 2.6.2 Ambitious Web Application <a name="ambitiouswebapplication"></a>
+<a name="ambitiouswebapplication"></a>
+### 2.6.2 Ambitious Web Application 
 
 Ambitious Web Application is a broad term firstly introduced by the Ember.js community to describe the range of possibilities using their framework. The baseline is that HTTP – the fundament of the World Wide Web – is stateless, while modern web applications have an obligation to be stateful. Furthermore, it takes the original idea behind SPAs, to provide a native desktop application feel, even further to create a better user experience. (Cravens &amp; Brady, 2014, pp. 1–5; Katz, 2013, 0:45-15:00)
 
-### 2.6.3 Progressive Web Application <a name="progressivewebapplication"></a>
+<a name="progressivewebapplication"></a>
+### 2.6.3 Progressive Web Application 
 
 Progressive Web Apps target mainly mobile clients and support many functionalities that are usually associated with native apps, viz. offline- or instant loading, push notifications and responsiveness. (Zolciak, 2017)
 
-## 2.7 React.js <a name="reactjs"></a>
+<a name="reactjs"></a>
+## 2.7 React.js 
 
 React is a front-end library to create graphical user interfaces. After being originally developed by Facebook in 2011, they open-sourced it in May 2013 by releasing their code to GitHub. Nowadays, the community and dedicated Facebook developer maintain React and the adjacent ecosystem.
 
@@ -279,7 +301,8 @@ The premise of the modern technology comes back to what Douglas Crockford, a Jav
 
 The rendering engine and core algorithm of React is called Fiber and was a complete rewrite of React. (Dodds, Abramov, &amp; Clark, 2016, 2:45–57:20; Clark, 2017, 0:25)
 
-## 2.8 Ember.js <a name="emberjs"></a>
+<a name="emberjs"></a>
+## 2.8 Ember.js 
 
 Ember.js is an open-source front end MVC JavaScript framework to create single-page applications. In 2011, SproutCore – another JavaScript framework – 2.0 was rebranded as Ember.js. (Scheffler, 2017) Due to the fact, that it was one of the earliest JavaScript frameworks to implement routing and other features that are now considered standard for every major front-end library (Katz, 2013, 16:40–18:00), Ember has been a role model for many technologies over the past couple of years.
 
@@ -291,7 +314,8 @@ As a rendering engine Ember depends on Glimmer (Katz et al., 2013), which can al
 
 With the intention to be an opinionated framework with as little manual configurations as possible, Ember supports a rich ecosystem of add-ons, which can be added or removed via npm or the Ember-CLI. (Burgess, 2017, 2ff; Penner et al., 2013)
 
-# 3. Requirements analysis <a name="requirementsanalysis"></a>
+<a name="requirementsanalysis"></a>
+# 3. Requirements analysis 
 
 Ever since the start of modern computing, constant hardware improvements made computers accessible to most of the mankind. A bigger community lead to more disruptive innovations, repeatedly pushing obsolete technology from the developer market. Many technologies, languages, best practices and the consensus of how things should be done changed over the past decades dramatically. In every regard, there are more options a developer can choose today, than ever before. It has never been more important, to carefully examine the underlying problem of a system and evaluate all the options. Agile development allows a more dynamic and flexible development, but does not simplify the process of concluding key prerequisites. The requirements analysis focuses on the problems Datex hopes to solve by moving to entirely modern technologies; Furthermore, it also tries to limit the scope of possibilities to choose from, by defining the expected outcome of this thesis and the resulting selection criteria.
 
@@ -307,19 +331,22 @@ A few developers at Datex experimented with the web approach by creating a Craft
 
 Due to the limited scope of this thesis, developers of Datex reduced the number of technologies to a bare minimum. The scientific work will only focus on the closer selection and only list existing alternatives. Amadeus is a big I/O oriented program; Therefore, easy maintainability, usage of test driven development, rapid development and backwards compatibility between different versions were one of the key prerequisites of any decision.
 
-# 4 Evaluation of technologies <a name="evaluationoftechnologies"></a>
+<a name="evaluationoftechnologies"></a>
+# 4 Evaluation of technologies 
 
 Before comparing technologies to each other, it is important to choose a method, which helps to solve a multiple-criteria decision analysis problem. There are a variety of methods for decision-making, but the decision-making paradox states that different methods may lead to different results. Even though the methods might be scientific, the decision-making paradox cannot be discarded, ultimately encouraging the decision maker to find an appropriate scientific method, repeat the evaluation process with several different methods or, which should be done regardless, reflect the result of the selected method critically. In 1947 Herring outlined the importance of scientific methods in crucial decisions by proposing the general need for a &quot;social science technician&quot;, anyone who is trained to apply scientific methods to practical situations in the interest of finding solutions. (Collins &amp; Guetzkow, op. 1964, 2f)
 
 For the sake of clarity and simplicity, the following paper mainly uses the decision-matrix method, also known as Pugh method. Internally, different evaluation technologies were used to reduce the number of possibilities to a bare minimum.
 
-## 4.1 Front end <a name="frontend"></a>
+<a name="frontend"></a>
+## 4.1 Front end 
 
 To begin with, there were several frameworks suitable for the futuristic Amadeus. Vue.js, Angular, Ember, React and Polymer were compared beforehand. With Ember and React making the closer selection, some adjustments had to be made to compare the Ember framework with the user interface (UI) library React. Since Ember recently open sourced their virtual rendering machine Glimmer, it would be possible to compare Glimmer to React; However, because Amadeus is reliant on more than just the view, it is better to add additional techniques to React to facilitate an equal comparison of React and Ember. React is mainly used with either the Flux architecture (Shannessy et al., 2014) or a state container called Redux (Abramov et al., 2015). Even though Flux was also created by Facebook, the community is mainly using Redux as it &quot;preserves all the benefits of Flux and adds new benefits&quot; (Abramov, 2015b). Consequently, React + Redux and Ember will be compared to each other.
 
 The following table shows the selection criterion and their respective description.
 
-**1. Table – Front end: Selection criteria with description**<a name="firsttable"></a>
+**1. Table – Front end: Sel
+<a name="firsttable"></a>ection criteria with description**
 
 | Selection criteria | Description |
 | --- | --- |
@@ -338,7 +365,8 @@ The following table shows the selection criterion and their respective descripti
 
 Initially, developers of Datex defined the weight of each criteria inside of the decision matrix. Note that the weight might vary for different applications. Coming from a Visual Basic background, rapid development was one of the top priorities of Datex, hence the high weight in every criterion that enhances the development workflow. The second table is based on the weight of each selection criteria and rates the technologies based on each specification, from 1 (very bad) to 10 (very good), individually. The rating of each criteria is subjective but reasoned through scientific methods, empirical evidence and conducted by internal Ember and React developers with extensive experience.
 
-**2. Table – Front end: Decision matrix**<a name="secondtable"></a>
+<a name="secondtable"></a>
+**2. Table – Front end: Decision matrix**
 
 | Selection criteria | Weight | Ember | React + Redux |
 | --- | --- | --- | --- |
@@ -358,21 +386,25 @@ Initially, developers of Datex defined the weight of each criteria inside of the
 
 In the following, some of the ratings from the decision matrix are taken apart, and some additional drawbacks, as well as benefits of both technologies are assessed
 
-### 4.1.1 Learn <a name="frontendlearn"></a>
+<a name="frontendlearn"></a>
+### 4.1.1 Learn 
 
 Few months after the release of React, Pete Hunt held a conference talk named &#39;React: Rethinking best practices&#39; where he talked about different well established best practices and how Facebook changed some of them with their design choices of React (Hunt, 2013, 0:50–29:30). One-way data binding and the functional approach to UI were quite different from what the community was used to (Occhino &amp; Jordan Walke, 2013, 0:00–4:45). Ember is dependent on jQuery &#9998;, thus using a popular library to bind events and interact with the DOM. Consequently, Ember and React + Redux have different learning curves. The ecosystem of React is significant enough to influence all criterion from the decision matrix; Therefore, excellent books, tutorials and official documentation have been establishing since React got open sourced. Nonetheless, the concepts that are introduced to React are disparate, especially for developers coming from an object-oriented background. In contrast, Ember uses the well-established MV\* pattern and shares similarities to a Ruby MVC framework called &#39;Ruby on Rails&#39; by using convention over configuration. (Cravens &amp; Brady, 2014, 8f) While Ember also has a learning curve, it is evidently easier to learn than React.
 
-### 4.1.2 CLI <a name="frontendcli"></a>
+<a name="frontendcli"></a>
+### 4.1.2 CLI 
 
 &quot;JavaScript Fatigue&quot; is a term created by Eric Clemmons in a popular article, which described the JavaScript ecosystem and an overwhelming amount of technologies that must be mastered before setting up a project. (Clemmons, 2015) Nowadays, JavaScript must be transpiled &#9998; to older ECMAScript versions that work across all browsers. JSX (when using React) should also be converted to JavaScript while preprocessors &#9998;, code splitting &#9998;, code minification require extra tools to optimize the user experience and to enhance the development workflow. (Banks &amp; Porcello, 2017, p. 2)A command line interface allows one to create a project with ease and is meant to cure the JavaScript fatigue by abstracting all the configurations while only exposing few commands to the developer.
 
 Ember had a good CLI, called Ember-CLI, from almost the dawn of the framework. Facebook added their CLI &#39;Create React App&#39; (Abramov et al., 2016) to their open source collection in July 2016. Both tools get rid of JavaScript Fatigue exceptionally well and are much easier to use than the conventional, manual techniques. (Occhino, 2017, 2:55–3:50)
 
-### 4.1.3 Development <a name="frontenddevelopment"></a>
+<a name="frontenddevelopment"></a>
+### 4.1.3 Development 
 
 Regarding development capabilities, React is undeniably the better choice. More libraries and tools have been entrenching to its ecosystem in comparison to Ember. (Att. 2 – React and Ember ecosystem) Following table showcases community differences by listing GitHub data (Data from 10.07.2017) of both technologies.
 
-**3. Table – Front end: GitHub comparison** <a name="thirdtable"></a>
+**3. Table – 
+<a name="thirdtable"></a>Front end: GitHub comparison** 
 
 | Framework | Issues | Stars | Issue/Star Ratio | Pull Requests |
 | --- | --- | --- | --- | --- |
@@ -383,13 +415,15 @@ The number of pull requests and number of contributors (Data from 15.08.2017) �
 
 Furthermore, JSX allows developers to write JavaScript and HTML combined, thus is an intuitive technology for web developers. On the other hand, Ember uses Handlebars that tries to mimic JavaScript but has a different syntax and is meant to be a logic less template engine. Michael Jackson who worked on Mustache.js, which is a subset and mostly compatible to Handlebars, described the development of the template engine as &quot;reinventing a programming language&quot; (Jackson &amp; Florence, 2016, 9:52–10:20) and was glad to see the breakthrough of JSX.
 
-### 4.1.4 Test, Build, Deploy <a name="frontendtestbuilddeploy"></a>
+<a name="frontendtestbuilddeploy"></a>
+### 4.1.4 Test, Build, Deploy 
 
 Both technologies have excellent tools to build, test and deploy products with. Ember solely uses the Ember CLI, while React refers to its own CLI or alternatively, manual usage of tools such as Gulp and Webpack &#9998;. When a project grows to the size where the custom configuration is mandatory, it is possible to eject the project from Create React App. Afterwards, developers need to learn how to use the tools given the fact, that a project ejection cannot be reverted. With Ember, it is possible to manually configure files, while still benefiting from the Ember CLI. The project does not have to be ejected and arising issues can mostly be solved through the installation of a suited add-on.
 
 Ember has the unit testing framework QUnit (Zaefferer et al., 2008) and test runner Test&#39;em (Ho et al., 2011) integrated, but allows third party libraries likewise. The flexibility and minimalistic approach of React is also noticeable when it comes to automated tests. Incidentally, Facebook uses and recommends using Jest, (Nakazawa et al., 2014) which is also included in their CLI, to test web applications; However, React does not incorporate an integrated testing library. (Nakagawa, 2017)
 
-### 4.1.5 Scale, Performance, Maintain <a name="frontendscaleperformancemaintain"></a>
+<a name="frontendscaleperformancemaintain"></a>
+### 4.1.5 Scale, Performance, Maintain 
 
 Amadeus GUI does not require a lot of complex rendering. As a result, performance is almost a negligible criterion on its own; However, what Amadeus is concerned about is how well the framework scales with an ever-growing application, as well as how well the framework is maintained. Consequently, scalability and maintainability are one of the most important aspects of choosing a framework for Amadeus. Ember and React + Redux scale exceptionally well. Ember helps developers to maintain a good folder structure and forces developers to embrace the MV\* pattern. At the same time, React was developed with the intention to create a predictable, scalable and declarative JavaScript framework. (Occhino et al., 2014, 8:25–10:00) Facebook alone uses about 30.000 React components. (Abramov, 2017)
 
@@ -399,33 +433,39 @@ Regarding performance, the new Glimmer and the fiber implementation are both dou
 
 ![Statistic of 10.000 row creation. It takes Ember 8519.045 ms and React 4771.61 ms ](./pictures/Create10000rows.png?raw=true "Inserting 10.000 rows")
 
-**1. Figure – Performance: create 10.000 rows** <a name="firstfigure"></a>
+**1. Fi
+<a name="firstfigure"></a>gure – Performance: create 10.000 rows** 
 
 The first figure shows the performance perks of the Fiber implementation when creating new DOM elements. React is almost 1.8 times faster than its counterpart. Other benchmark tests demonstrate that the new Glimmer virtual machine can almost keep up with the virtual DOM of React. The following figure shows the time spent to update rows.
 
 ![Statistic of updating every 10th row. It takes Ember 1936.595 ms and React 953.955 ms ](./pictures/UpdateEvery10throw.png?raw=true "Updating every 10th row")
 
-**2. Figure – Performance: update every 10th row** <a name="secondfigure"></a>
+**2. Figure
+<a name="secondfigure"></a> – Performance: update every 10th row** 
 
-### 4.1.6 Package size <a name="frontendpackagesize"></a>
+<a name="frontendpackagesize"></a>
+### 4.1.6 Package size 
 
 Both technologies come at a relatively expensive cost. The package size of both technologies is big enough to decrease the user experience on mobile devices with slow internet access. Especially when building progressive web apps, package size and primal loading times are important. Fortunately, internet bandwidth keeps getting better (Roberts, 2000, 117f) and recent versions of React and Ember convincingly decreased their respective package size. (Beale, Thoburn, &amp; Navasardyan, 2017)
 
 Printing a &lt;p&gt; Hello World &lt;/p&gt; produces a minified and gzipped file size of 197.73kb for Ember and 47.49kb for React. Redux is almost negligible due to its small size. Adding Redux increases the file size to 48.35kb. Subsequently, React has a much smaller, optimized file size.
 
-### 4.1.7 Decision <a name="frontenddecision"></a>
+<a name="frontenddecision"></a>
+### 4.1.7 Decision 
 
 To summarize the front-end comparison between React and Ember, it should be clear that both frameworks have their advantage and disadvantages. React has a bigger community while Ember allows developers to be productive faster. Additionally, the add-on structure of the Ember CLI allows more customization in comparison to the relatively new Create React App. Nonetheless, React did not only achieve to rethink best practices in their user base, but also across the entire community; Therefore, more frameworks seem to adopt some of the functional paradigms of React.
 
 Due to the fact, that both frameworks scored 693 points for the use-case – Amadeus, the decision had to be based on less decisive factors. Seeing that Datex already has a lot of code written in Ember and the attractiveness of convention over configuration, let to the decision to use Ember for the futuristic Amadeus. Another reason was the mentality of Ember summarized by Tom Dale, a contributor to Ember, as being &quot;shameless to steal great ideas&quot; from other technologies in the market. &quot;In my mind, the strength of Ember and the reason why it has its longevity is because we don&#39;t have a problem saying: &#39;[...] the way we were doing it before was bad. Let&#39;s do it this new way and make sure that [...] there is a path of transitioning.&#39;&quot; (Dale &amp; Yehuda, 2014, 50:10–50:45)
 
-## 4.2 Back end <a name="backend"></a>
+<a name="backend"></a>
+## 4.2 Back end 
 
 Initially, developers of Datex listed well-known back-end languages. Afterwards, each item of the list was assessed based on user stories of the current Amadeus, removing many languages in the process. As the scope of viable technologies got smaller, the requirements had to be strictly adjusted to find viable differences between the technologies, that ultimately lead to a decision. The original list contained languages such as Java, PHP, C#, Python, Ruby, Node.js, Erlang &#9998; , Scala and Go &#9998; . Due to some obsolete architectures from older languages, size of community constraints and missing developer experience with certain languages, the closer selection contained only Scala and Node.js as viable possibilities for the rework of the Amadeus backend.
 
 Following table shows all criteria with their respective description.
 
-**4. Table – Back end: Selection criteria with description** <a name="forthtable"></a>
+**4. Table – Back e
+<a name="forthtable"></a>nd: Selection criteria with description** 
 
 | Selection criteria | Description |
 | --- | --- |
@@ -438,15 +478,18 @@ Following table shows all criteria with their respective description.
 | Scale | Scalability of the application and performance with a growing code base. |
 | Maintain | Backwards compatibility, longevity. |
 
-### 4.2.1 Learn <a name="backendlearn"></a>
+<a name="backendlearn"></a>
+### 4.2.1 Learn 
 
 Since Node.js is simply JavaScript in conjunction with C++ and C modules, it is easy to learn. The concept of non-blocking I/O inside a single-threaded language, can be intimidating to beginners. On the other hand, especially coming from a multi-threaded, blocking I/O language, developers tend to quickly grasp the power of the architecture that is unleashed when using the event-loop to its full potential. Contrary to the learning curve of Node.js is the learning curve of Scala. It takes a while not only to comprehend the complex syntax of Scala but also to understand the functional programming paradigm. The documentation and other learning resources are excellent for both technologies, but considering that JavaScript must be learned anyhow to develop a front end, Node.js distinctly has an advantage and saves teams a lot of resources.
 
-### 4.2.2 Development <a name="backenddevelopment"></a>
+<a name="backenddevelopment"></a>
+### 4.2.2 Development 
 
 While Scala is maintained with a high academic standard and allows access to all JVM related technologies such as an enormous collection of maven repositories, the community and ecosystem is nowhere near the ecosystem of Node.js.
 
-**5. Table – Back end: GitHub comparison** (Data from 17.07.2017) <a name="fifthtable"></a>
+**5. Table – Back end: GitHub 
+<a name="fifthtable"></a>comparison** (Data from 17.07.2017) 
 
 | Language | Issues | Stars | Issue/Star Ratio | Pull Requests |
 | --- | --- | --- | --- | --- |
@@ -455,7 +498,8 @@ While Scala is maintained with a high academic standard and allows access to all
 
 The fifth table showcases the differences between the two technologies. Not only the bare size of the community but also the number of JavaScript packages have skyrocketed and quickly surpassed the Maven repository, which has been around for more than 20 years. As per a web application that counts the number of modules, there are 503.307 npm JavaScript repositories with an average growth of 482 modules per day while Java seems to plateau on close to 200.000 maven repositories with an average growth of 90 modules per day. (Debill, 21.08.2017)
 
-### 4.2.3 Test, Secure, Build, Deploy <a name="backendtestsecurebuilddeploy"></a>
+<a name="backendtestsecurebuilddeploy"></a>
+### 4.2.3 Test, Secure, Build, Deploy 
 
 Scala and Node.js can make use of several libraries to test applications. Scala has an additional advantage due to the nature of pure functions. Both technologies can make use of test-driven development, thus providing excellent code quality management tools.
 
@@ -465,13 +509,15 @@ The deployment process is good and similar on both sides. It is mainly dependent
 
 Furthermore, the JavaScript ecosystem supports a lot of different tools to minify, transpile and transform JavaScript. None of the tools are required when working with Node.js because there are no concerns that the code runs on some old browser, which means that always the newest ESNext ECMAScript standard can be used. Scala must be compiled to Java bytecode and is then ready to be deployed.
 
-### 4.2.4 Maintain <a name="backendmaintain"></a>
+<a name="backendmaintain"></a>
+### 4.2.4 Maintain 
 
 ECMAScript makes mainly backward compatible changes and many of the ESNext features that are in a lower TC39 stage can be used through additional libraries. With a growing number of external repositories, it is easy to lose track of breaking changes that are being applied to the packages in use. Most of the times it is still more convenient to use a preexisting package and read through the API instead of reinventing the wheel. Scala has similar problems and in addition, is not entirely binary compatible between different releases. (Odersky, 2011; Miller, 2017)
 
 The Stack Overflow survey from 2017 placed JavaScript as the most commonly used programming language while Java took the third place. Both, Scala and JavaScript are with roughly 60% loved amongst their community. Additionally, Node.js is with 62.1% the second most wanted technology. (Stack Overflow, 2017) All the above indicate active communities and increases the expected longevity of both languages.
 
-### 4.2.5 Scale <a name="backendscale"></a>
+<a name="backendscale"></a>
+### 4.2.5 Scale 
 
 Scala scales extremely well. It is a static typed language and the functional paradigm allows to write short, precise code. Frameworks and libraries also help with the usage of concurrency and it is dynamic in the sense that either blocking or non-blocking I/O is possible.
 
@@ -479,9 +525,11 @@ In JavaScript, developers had to deal with nested callback functions for years. 
 
 Due to the non-blocking structure, Node.js was faster in all the performance tests conducted by the author. (Att. 3 – Back-end performance) Generally speaking, Node.js should be used when an application is heavily I/O dependent and Scala if a lot of computing is required. (Brikman, 2014)
 
-### 4.2.6 Decision <a name="backenddecision"></a>
+<a name="backenddecision"></a>
+### 4.2.6 Decision 
 
-**6. Table – Back end: Decision matrix**<a name="sixthtable"></a>
+<a name="sixthtable"></a>
+**6. Table – Back end: Decision matrix**
 
 | Selection criteria | Weight | Node.js + TypeScript | Scala |
 | --- | --- | --- | --- |
@@ -497,7 +545,8 @@ Due to the non-blocking structure, Node.js was faster in all the performance tes
 
 The sixth table shows the weight of each criteria and the rating based on all the above analysis. Regarding Amadeus, the result show clear advantages of Node.js in comparison to Scala. On the one hand choosing TypeScript added another technology to the learning process and forces developers to be more restricted in the way they code. On the other hand, IntelliSense with TypeScript works better; thus, enhancing the development workflow. Furthermore, applications scale better with a strictly typed language, ultimately resulting in a less error prone code base; Therefore, using TypeScript improved the rating of several criteria. Despite the fact, that we already have more than 9.000 lines of Scala code across 112 files, we still think choosing Node.js is a better long-term investment. Picking Node.js in a project is less resource intensive and allows code sharing between the front – and back end since the whole development stack will be written or compiled to JavaScript. Additional technologies and tools such as IDE configurations, Linter, code prettier and testing libraries must be learned only once across the development stack.
 
-# 5. Migration path <a name="migrationpath"></a>
+<a name="migrationpath"></a>
+# 5. Migration path 
 
 To follow up on the fact, that customers have been using a desktop application for several decades, we decided to make use of Electron.js. Electron allows to &quot;quickly write sophisticated cross-platform desktop apps.&quot; (Jensen, 2017, p. xvii) Since Node.js is used by Electron anyhow, we remove additional language barriers by developing a web application and a desktop application from mostly the same code-base. (Jensen, 2017, 4f) Electron supports building desktop apps with Ember (Rieseberg, 2016, 0:30–15:00) and fully supports TypeScript. (Sikelianos, 2017) Additionally, since Ember has full TypeScript support as well, we can take full advantage of the JavaScript superset by using it in conjunction with Ember for the front-end alike. Thus, the whole code-base will be consistent and written in TypeScript. Ken Pugh described consistency as a &quot;form of simplicity&quot; while advocating that enforcing consistency should always follow a purpose. (Pugh, 2005, p. 31) In our use-case, consistency enables Datex to establish full-stack guidelines, code reviews, and testing design patterns to enhance quality management and productivity.
 
@@ -505,25 +554,29 @@ To overcome some anticipated migration problems, developers started working on a
 
 ![Amadeus is connected to 40 'raw' DLL's which will be migrated to the Starserver. At the same time, web development of the futuristic Amadeus starts.](./pictures/AmadeusNow.png?raw=true "Rewrite of Amadeus and Starserver migration")
 
-**3. Figure – Migration phase #1: Rewrite of Amadeus &amp; Starserver migration** <a name="thirdfigure"></a>
+**3. Figure – Migration phase #1: Rewrit
+<a name="thirdfigure"></a>e of Amadeus &amp; Starserver migration** 
 
 At the same time, as seen in the third figure, developers can start the reimplementation of Amadeus with the proposed technologies from this paper. The already written Craftmanportal must be migrated from Scala to Node.js and every Amadeus user story that is implemented in the legacy code base, must be resembled in the futuristic Amadeus. Furthermore, the Starserver is connected to the database whereas single C# DLLs had no database access and were fully reliant on information passed by the VB6 code through COM interoperability. Every service that gets migrated to the Starserver can access the database. As a result, less COM dependent communication is required, removing code complexity and DLL hell in the process.
 
 ![The legacy code base is connected to a single instance of the Starserver via Socket, RMI and COM. Both the legacy code and the Starserver have access to the database.](./pictures/AmadeusLater.png?raw=true "Rewrite of Amadeus and adding features")
 
-**4. Figure – Migration phase #2: Rewrite of Amadeus &amp; adding features** <a name="forthfigure"></a>
+**4. Figure – Migration phase #2: R
+<a name="forthfigure"></a>ewrite of Amadeus &amp; adding features** 
 
 Figure 4 depicts the infrastructure once the Starserver migration is finished. Only one DLL will be required, ultimately getting rid of a lot of code verbosity. During this migration phase, all the developers can solely focus on adding more features to Amadeus (Starserver) and the futuristic – progressive web application – Amadeus.
 
 ![We have one web application (Ember) and a desktop application (Ember + Electron). Either the clients are connected to both, Starserver and Node.js server, or to only Node.js.](./pictures/AmadeusWeb.png?raw=true "Progressive, ambitious web application")
 
-**5. Figure – Migration phase #3: Progressive, ambitious web application**<a name="fifthfigure"></a>
+**5. Figure – Migration phase #3: 
+<a name="fifthfigure"></a>Progressive, ambitious web application**
 
 At the time, the web application is going to contain the same functionality as the VB6 legacy code, we can get rid of VB6 entirely and additionally make use of all the features that were implemented into the Starserver during the entire migration process. There are different ways to make use of the code inside of the Starserver.
 
 One option is to transform the Starserver into a Representational State Transfer (REST) &#9998; server. This would result in clients connecting to both Node.js and the Starserver via HTTP. Alternatively, due to the flexible nature of Node.js, servers can act as clients and communicate mutually with other servers or services (Springer, 2013, p. 24); Thus, there are more possibilities to connect to the Starserver. The Node.js server could use a similar approach to the VB6 server as seen earlier in the fourth figure and make use of sockets. It could also send HTTP requests in case we use a RESTful Starserver architecture, or as depicted in the fifth figure, use the code of the Starserver directly through a library called Edge.js. (Janczuk et al., 2013) Edge.js is a library that allows the usage of .NET code, conclusively lowering the latency between cross-server requests by a lot. (Att. 4 – Latency comparison) A decision has yet to be concluded because, at the time we reach the end of the second migration phase, there might be other viable alternatives.
 
-# 6 Conclusion <a name="conclusion"></a>
+<a name="conclusion"></a>
+# 6 Conclusion 
 
 Modern web development has enormous potential, and all the listed technologies would not be available without an active open source community. While some people believe that the growing complexity of different technologies and what seems to be a myriad of new tools emerging into the market daily are a contradiction to technological advancement, constant improvements of web technologies make solutions feasible that could not be thought of before. Dijkstra reasoned the flawed thought that advancing programming technologies would make programming easier in 1972:
 
@@ -541,7 +594,8 @@ Time will tell how much the development productivity, quality and performance of
 &#10071; Thank you for reading. We are currently hiring. If you are interested working with the proposed technologies, send us an email info@datex.de
 ***
 
-# Glossary <a name="glossary"></a>
+<a name="glossary"></a>
+# Glossary 
 
 **Architecture reconstruction** &quot;is the process where the &#39;as-built&#39; architecture of an implemented system is obtained from the existing legacy system.&quot; (Kazman, O&#39;Brien, &amp; Verhoef, 2002, vii)
 
@@ -601,9 +655,11 @@ Time will tell how much the development productivity, quality and performance of
 
 **Webpack** bundles JavaScript code and supports different plugins to enhance web development and the user experience. (Koppers et al., 2012)
 
-# Attachments <a name="attachments"></a>
+<a name="attachments"></a>
+# Attachments 
 
-**1. Attachment – Market share operating systems** <a name="firstattachment"></a>
+**1. Attac
+<a name="firstattachment"></a>hment – Market share operating systems** 
 
 | **Operating system** | **Market share** |
 | --- | --- |
@@ -624,13 +680,15 @@ Time will tell how much the development productivity, quality and performance of
 
 (Netmarketshare, 2016)
 
-**2. Attachment – React and Ember ecosystem** <a name="secondattachment"></a>
+**2. Attachm
+<a name="secondattachment"></a>ent – React and Ember ecosystem** 
 
 As of 15.08.2017, Ember has 5230 packages. (Node Package Manager, 2017a)
 
 As of 15.08.2017, React has 35424 packages. (Node Package Manager, 2017b)
 
-**3. Attachment – Back-end performance** <a name="thirdattachment"></a>
+<a name="thirdattachment"></a>
+**3. Attachment – Back-end performance** 
 
 The benchmark tests were not written by the author, but the source code was analyzed and the results were verified. The numbers represent JSON responses per second. Play and Akka are both Scala frameworks, whereas only the fastest of the two is represented in the tables.
 
@@ -678,7 +736,8 @@ Plaintext
 
 (Smith, Turner, &amp; Malawski, 2017)
 
-**4. Attachment – Latency comparison** <a name="forthattachment"></a>
+<a name="forthattachment"></a>
+**4. Attachment – Latency comparison** 
 
 ![Latency comparison. In-process call from Node.js to C# via Edge.js takes 0.0464 ms while cross-process, via HTTP takes 1.4813 ms](https://camo.githubusercontent.com/15bfeb4bb415a2889acc3d58f1c3be7e70fea486/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3832323336392f3438363339332f36343566363936612d623932302d313165322d386132302d3966613639333262623039322e706e67)
 
