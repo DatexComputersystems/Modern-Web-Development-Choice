@@ -3,7 +3,7 @@ Scientific work of some decisions that need to be taken into account when rewrit
 
 ## **2nd project thesis In the course of exam to Bachelor of Science (B. Sc.)**
 
-## University: DHBW Karlsruhe, faculty economy
+**University: DHBW Karlsruhe, faculty economy**
 
 **Title: Rework of an obsolete desktop application code-base into a single-page application**
 
