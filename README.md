@@ -105,7 +105,8 @@ Scientific work of some decisions that need to be taken into account when rewrit
 
 [References](#references)
 
-# List of illustrations <a name="listofillustrations"></a>
+<a name="listofillustrations"></a>
+# List of illustrations
 
 [1. Figure – Performance: create 10.000 rows](#firstfigure)
 
