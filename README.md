@@ -237,7 +237,7 @@ Rewriting Amadeus is not part of the scientific work, as it would go beyond the 
 <a name="fundamentals"></a>
 # 2. Fundamentals 
 
-<a name="reimplemntation"></a>
+<a name="reimplementation"></a>
 ## 2.1 Reimplementation 
 
 The reimplementation paradigm can be realized by first analyzing the system using a method called architecture reconstruction &#9998;. After a certain task or user story within the system has been identified and detached from the specific programming language (Pugh, 2005, p. 160), one can start reimplementing the problem in any target language based on the understanding of the problem. (Waters, 1988) Detachment from the current architecture and language is not only important to prevent the disadvantageous copy pasting of tasks (Maurer &amp; Kulathuramaiyer, 2007) into a newer system but also to reason through the first-principle school of thought (Yourgrau &amp; Beginnen, 2005, 197f), which enables developers to think about certain problems anew, ultimately improving the solution in the process. If this process is repeated for each subproblem within a software system, the program can be considered reimplemented.
@@ -433,15 +433,15 @@ Regarding performance, the new Glimmer and the fiber implementation are both dou
 
 ![Statistic of 10.000 row creation. It takes Ember 8519.045 ms and React 4771.61 ms ](./pictures/Create10000rows.png?raw=true "Inserting 10.000 rows")
 
-**1. Fi
-<a name="firstfigure"></a>gure – Performance: create 10.000 rows** 
+<a name="firstfigure"></a>
+**1. Figure – Performance: create 10.000 rows** 
 
 The first figure shows the performance perks of the Fiber implementation when creating new DOM elements. React is almost 1.8 times faster than its counterpart. Other benchmark tests demonstrate that the new Glimmer virtual machine can almost keep up with the virtual DOM of React. The following figure shows the time spent to update rows.
 
 ![Statistic of updating every 10th row. It takes Ember 1936.595 ms and React 953.955 ms ](./pictures/UpdateEvery10throw.png?raw=true "Updating every 10th row")
 
-**2. Figure
-<a name="secondfigure"></a> – Performance: update every 10th row** 
+<a name="secondfigure"></a>
+**2. Figure – Performance: update every 10th row** 
 
 <a name="frontendpackagesize"></a>
 ### 4.1.6 Package size 
@@ -464,8 +464,8 @@ Initially, developers of Datex listed well-known back-end languages. Afterwards,
 
 Following table shows all criteria with their respective description.
 
-**4. Table – Back e
-<a name="forthtable"></a>nd: Selection criteria with description** 
+<a name="forthtable"></a>
+**4. Table – Back end: Selection criteria with description**
 
 | Selection criteria | Description |
 | --- | --- |
@@ -488,8 +488,8 @@ Since Node.js is simply JavaScript in conjunction with C++ and C modules, it is 
 
 While Scala is maintained with a high academic standard and allows access to all JVM related technologies such as an enormous collection of maven repositories, the community and ecosystem is nowhere near the ecosystem of Node.js.
 
-**5. Table – Back end: GitHub 
-<a name="fifthtable"></a>comparison** (Data from 17.07.2017) 
+<a name="fifthtable"></a>
+**5. Table – Back end: GitHub comparison** (Data from 17.07.2017
 
 | Language | Issues | Stars | Issue/Star Ratio | Pull Requests |
 | --- | --- | --- | --- | --- |
@@ -554,22 +554,22 @@ To overcome some anticipated migration problems, developers started working on a
 
 ![Amadeus is connected to 40 'raw' DLL's which will be migrated to the Starserver. At the same time, web development of the futuristic Amadeus starts.](./pictures/AmadeusNow.png?raw=true "Rewrite of Amadeus and Starserver migration")
 
-**3. Figure – Migration phase #1: Rewrit
-<a name="thirdfigure"></a>e of Amadeus &amp; Starserver migration** 
+<a name="thirdfigure"></a>
+**3. Figure – Migration phase #1: Rewrite of Amadeus &amp; Starserver migration** 
 
 At the same time, as seen in the third figure, developers can start the reimplementation of Amadeus with the proposed technologies from this paper. The already written Craftmanportal must be migrated from Scala to Node.js and every Amadeus user story that is implemented in the legacy code base, must be resembled in the futuristic Amadeus. Furthermore, the Starserver is connected to the database whereas single C# DLLs had no database access and were fully reliant on information passed by the VB6 code through COM interoperability. Every service that gets migrated to the Starserver can access the database. As a result, less COM dependent communication is required, removing code complexity and DLL hell in the process.
 
 ![The legacy code base is connected to a single instance of the Starserver via Socket, RMI and COM. Both the legacy code and the Starserver have access to the database.](./pictures/AmadeusLater.png?raw=true "Rewrite of Amadeus and adding features")
 
-**4. Figure – Migration phase #2: R
-<a name="forthfigure"></a>ewrite of Amadeus &amp; adding features** 
+<a name="forthfigure"></a>
+**4. Figure – Migration phase #2: Rewrite of Amadeus &amp; adding features** 
 
 Figure 4 depicts the infrastructure once the Starserver migration is finished. Only one DLL will be required, ultimately getting rid of a lot of code verbosity. During this migration phase, all the developers can solely focus on adding more features to Amadeus (Starserver) and the futuristic – progressive web application – Amadeus.
 
 ![We have one web application (Ember) and a desktop application (Ember + Electron). Either the clients are connected to both, Starserver and Node.js server, or to only Node.js.](./pictures/AmadeusWeb.png?raw=true "Progressive, ambitious web application")
 
-**5. Figure – Migration phase #3: 
-<a name="fifthfigure"></a>Progressive, ambitious web application**
+<a name="fifthfigure"></a>
+**5. Figure – Migration phase #3: Progressive, ambitious web application**
 
 At the time, the web application is going to contain the same functionality as the VB6 legacy code, we can get rid of VB6 entirely and additionally make use of all the features that were implemented into the Starserver during the entire migration process. There are different ways to make use of the code inside of the Starserver.
 
@@ -658,8 +658,8 @@ Time will tell how much the development productivity, quality and performance of
 <a name="attachments"></a>
 # Attachments 
 
-**1. Attac
-<a name="firstattachment"></a>hment – Market share operating systems** 
+<a name="firstattachment"></a>
+**1. Attachment – Market share operating systems** 
 
 | **Operating system** | **Market share** |
 | --- | --- |
@@ -680,8 +680,8 @@ Time will tell how much the development productivity, quality and performance of
 
 (Netmarketshare, 2016)
 
-**2. Attachm
-<a name="secondattachment"></a>ent – React and Ember ecosystem** 
+<a name="secondattachment"></a>
+**2. Attachment – React and Ember ecosystem** 
 
 As of 15.08.2017, Ember has 5230 packages. (Node Package Manager, 2017a)
 
