@@ -138,9 +138,9 @@ Scientific work of some decisions that need to be taken into account when rewrit
 <a name="listofattachments"></a>
 # List of attachments 
 
-[1. Attachment – Market share operating systems](#firstattachments)
+[1. Attachment – Market share operating systems](#firstattachment)
 
-[2. Attachment – React and Ember ecosystem](#secondattachments)
+[2. Attachment – React and Ember ecosystem](#secondattachment)
 
 [3. Attachment – Back-end performance](#thirdattachment)
 
